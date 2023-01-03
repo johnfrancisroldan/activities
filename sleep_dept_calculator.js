@@ -1,5 +1,10 @@
+/* 
+SLEEP DEBT CALCULATOR
+    The program will determine the actual and ideal hours of sleep for each night of the last week
+*/
+
 const getActualSleepHours = () => {
-    /* Getting the total sleep hour per day of the week */ 
+    /* Getting The Total Sleep Hour Per Day Of The Week */ 
   
     // Sleep Hours per week
     let mondaySleepHours = 7;
@@ -18,12 +23,12 @@ const getActualSleepHours = () => {
   }
   
   const getIdealSleepHours = (idealHours) => {
-    /* Getting the ideal sleep hours for a Week */ 
+    /* Getting The Ideal Sleep Hours For A Week */ 
     return idealHours * 7;
   }
   
   const calculateSleepDebt = () => {
-     /* Calculating the Sleel Debt */
+     /* Calculating The Sleel Debt */
   
     // Getting the Actual and Ideal Sleep Hours
     const actualSleepHours = getActualSleepHours();
