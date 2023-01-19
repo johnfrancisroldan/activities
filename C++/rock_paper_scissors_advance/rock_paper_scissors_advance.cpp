@@ -1,206 +1,225 @@
 
 /*
-  ROCK, PAPER, SCISSORS, LIZARD, SPOCK
-    I invented this game with karen bryla because it seems like when you know someone well enough 75 80 of any rock paper scissors games you play with that person end up in a tie well here is a slight variation that reduces that probability this version is also nice because it satisfies the law of fives
+  TITLE: ROCK, PAPER, SCISSORS, LIZARD, SPOCK
+    DESCRIPTION:
+        I invented this game with karen bryla because it seems like when you know someone well enough 75 80 of any rock paper scissors games you play with that person end up in a tie well here is a slight variation that reduces that probability this version is also nice because it satisfies the law of fives
 
-✌️ < ✋
-✋ < ✊
-✊ < 🦎
-🦎 < 🖖
-🖖 < ✌️
-✌️ < 🦎
-🦎 < ✋
-✋ < 🖖
-🖖 < ✊
-✊ < ✌️
+    Game Condtions:
+        ✌️  < ✋
+        ✋ < ✊
+        ✊ < 🦎
+        🦎 < 🖖
+        🖖 < ✌️
+        ✌️ < 🦎
+        🦎 < ✋
+        ✋ < 🖖
+        🖖 < ✊
+        ✊ < ✌️
 */
 
-#include <iostream>
-#include <cstdlib>
+#include <iostream> // Allow us to perform basic input and output in the program
+#include <cstdlib>  // Allow us to use random functions
+
+using namespace std;
+
 int main()
 {
+    /* R.P.C.L.S Game. User VS Computer */
+
+    // Iterate the game until the user is done playing
+
     // Generate random seed
     srand(time(NULL));
 
-    // Generate random number from 1 5
-    int computer = rand() % 5 + 1;
-    int user = 0;
+    int computer = rand() % 5 + 1; // Generate random number from 1 5
+    int user_picks = 0;            // user choice
+    int tries = 3;                 // User Tries
+    // Game Prompt
+    cout << "=======================================\n";
+    cout << "Rock, Paper, Scissors, Lizard, Spock!\n";
+    cout << "=======================================\n";
 
-    std::cout << "=======================================\n";
-    std::cout << "Rock, Paper, Scissors, Lizard, Spock!\n";
-    std::cout << "=======================================\n";
+    while (tries > 0 && (user_picks != 1 && user_picks != 2 && user_picks != 3 && user_picks != 4 && user_picks != 5))
+    {
+        // Game choices
+        cout << "1) ✊ Rock \n";
+        cout << "2) ✋ Paper\n";
+        cout << "3) ✌️ Scissors\n";
+        cout << "4) 🦎 Lizard\n";
+        cout << "5) 🖖 Spocks\n";
 
-    std::cout << "1) ✊\n";
-    std::cout << "2) ✋\n";
-    std::cout << "3) ✌️\n";
-    std::cout << "4) 🦎\n";
-    std::cout << "5) 🖖\n";
+        cout << "shoot! \n";
 
-    std::cout << "shoot! \n";
+        // User choice
+        cout << "Choose: ";
+        cin >> user_picks;
+        // Determining the winner of the game
+        if (user_picks == 1 && computer == 2)
+        {
+            cout << "Computer Wins:"
+                 << "😁 : "
+                 << "✊ VS"
+                 << "🤖 : "
+                 << "✋\n";
+        }
+        else if (user_picks == 1 && computer == 3)
+        {
+            cout << "Player Wins:"
+                 << "😁 : "
+                 << "✊ VS"
+                 << "🤖 : "
+                 << "✌️\n";
+        }
+        else if (user_picks == 1 && computer == 4)
+        {
+            cout << "Player Wins:"
+                 << "😁 : "
+                 << "✊ VS "
+                 << "🤖 : "
+                 << "🦎\n";
+        }
+        else if (user_picks == 1 && computer == 5)
+        {
+            cout << "Computer Wins:"
+                 << "😁 : "
+                 << "✊ VS "
+                 << "🤖 : "
+                 << "🖖\n";
+        }
+        else if (user_picks == 2 && computer == 3)
+        {
+            cout << "Computer Wins:"
+                 << "😁 : "
+                 << "✋ VS "
+                 << "🤖 : "
+                 << "✌️\n";
+        }
+        else if (user_picks == 2 && computer == 4)
+        {
+            cout << "Computer Wins:"
+                 << "😁 : "
+                 << "✋ VS "
+                 << "🤖 : "
+                 << "🦎\n";
+        }
+        else if (user_picks == 2 && computer == 5)
+        {
+            cout << "Player Wins:"
+                 << "😁 : "
+                 << "✋ VS "
+                 << "🤖 : 🖖\n";
+        }
+        else if (user_picks == 2 && computer == 1)
+        {
+            cout << "Player Wins:"
+                 << "😁 : "
+                 << "✋ VS "
+                 << "🤖 : ✊\n";
+        }
+        else if (user_picks == 3 && computer == 1)
+        {
+            cout << "Player Wins:"
+                 << "😁 : "
+                 << "✌️ VS "
+                 << "🤖 : "
+                 << "✊\n";
+        }
+        else if (user_picks == 3 && computer == 2)
+        {
+            cout << "Player Wins:"
+                 << "😁 : "
+                 << "✌️ VS "
+                 << "🤖 : "
+                 << "✋\n";
+        }
+        else if (user_picks == 3 && computer == 4)
+        {
+            cout << "Player Wins:"
+                 << "😁 : "
+                 << "✌️ VS "
+                 << "🤖 : 🦎\n";
+        }
+        else if (user_picks == 3 && computer == 5)
+        {
+            cout << "Computer Wins:"
+                 << "😁 : "
+                 << "✌️ VS "
+                 << "🤖 : 🖖\n";
+        }
+        else if (user_picks == 4 && computer == 1)
+        {
+            cout << "Computer Wins:"
+                 << "😁 : "
+                 << "🦎 VS "
+                 << "🤖 : "
+                 << "✊\n";
+        }
+        else if (user_picks == 4 && computer == 2)
+        {
+            cout << "Player Wins:"
+                 << "😁 : "
+                 << "🦎 VS "
+                 << "🤖 : "
+                 << "✋\n";
+        }
+        else if (user_picks == 4 && computer == 3)
+        {
+            cout << "Computer Wins:"
+                 << "😁 : "
+                 << "🦎 VS "
+                 << "🤖 : ✌️\n";
+        }
+        else if (user_picks == 4 && computer == 5)
+        {
+            cout << "Player Wins:"
+                 << "😁 : "
+                 << "🦎 VS "
+                 << "🤖 : 🖖\n";
+        }
+        else if (user_picks == 5 && computer == 1)
+        {
+            cout << "Player Wins:"
+                 << "😁 : "
+                 << "🖖 VS "
+                 << "🤖 : "
+                 << "✊\n";
+        }
+        else if (user_picks == 5 && computer == 2)
+        {
+            cout << "Computer Wins:"
+                 << "😁 : "
+                 << "🖖 VS "
+                 << "🤖 : "
+                 << "✋\n";
+        }
+        else if (user_picks == 5 && computer == 3)
+        {
+            cout << "Player Wins:"
+                 << "😁 : "
+                 << "🖖 VS "
+                 << "🤖 : ✌️\n";
+        }
+        else if (user_picks == 5 && computer == 4)
+        {
+            cout << "Computer Wins:"
+                 << "😁 : "
+                 << "🖖 VS "
+                 << "🤖 : 🦎\n";
+        }
+        else if (user_picks == computer)
+        {
+            cout << "Tie\n";
+        }
+        else
+        {
+            // Wrong Inputs
+            if (tries != 1)
+            {
+                cout << "\nInvalid input. Please Try Again\n";
+            }
+            tries--; // Decreament
+        }
+    }
 
-    std::cin >> user;
-
-    // Determining the winner of the game
-    if (user == 1 && computer == 2)
-    {
-        std::cout << "Computer Wins:"
-                  << "😁 : "
-                  << "✊ VS"
-                  << "🤖 : "
-                  << "✋\n";
-    }
-    else if (user == 1 && computer == 3)
-    {
-        std::cout << "Player Wins:"
-                  << "😁 : "
-                  << "✊ VS"
-                  << "🤖 : "
-                  << "✌️\n";
-    }
-    else if (user == 1 && computer == 4)
-    {
-        std::cout << "Player Wins:"
-                  << "😁 : "
-                  << "✊ VS "
-                  << "🤖 : "
-                  << "🦎\n";
-    }
-    else if (user == 1 && computer == 5)
-    {
-        std::cout << "Computer Wins:"
-                  << "😁 : "
-                  << "✊ VS "
-                  << "🤖 : "
-                  << "🖖\n";
-    }
-    else if (user == 2 && computer == 3)
-    {
-        std::cout << "Computer Wins:"
-                  << "😁 : "
-                  << "✋ VS "
-                  << "🤖 : "
-                  << "✌️\n";
-    }
-    else if (user == 2 && computer == 4)
-    {
-        std::cout << "Computer Wins:"
-                  << "😁 : "
-                  << "✋ VS "
-                  << "🤖 : "
-                  << "🦎\n";
-    }
-    else if (user == 2 && computer == 5)
-    {
-        std::cout << "Player Wins:"
-                  << "😁 : "
-                  << "✋ VS "
-                  << "🤖 : 🖖\n";
-    }
-    else if (user == 2 && computer == 1)
-    {
-        std::cout << "Player Wins:"
-                  << "😁 : "
-                  << "✋ VS "
-                  << "🤖 : ✊\n";
-    }
-    else if (user == 3 && computer == 1)
-    {
-        std::cout << "Player Wins:"
-                  << "😁 : "
-                  << "✌️ VS "
-                  << "🤖 : "
-                  << "✊\n";
-    }
-    else if (user == 3 && computer == 2)
-    {
-        std::cout << "Player Wins:"
-                  << "😁 : "
-                  << "✌️ VS "
-                  << "🤖 : "
-                  << "✋\n";
-    }
-    else if (user == 3 && computer == 4)
-    {
-        std::cout << "Player Wins:"
-                  << "😁 : "
-                  << "✌️ VS "
-                  << "🤖 : 🦎\n";
-    }
-    else if (user == 3 && computer == 5)
-    {
-        std::cout << "Computer Wins:"
-                  << "😁 : "
-                  << "✌️ VS "
-                  << "🤖 : 🖖\n";
-    }
-    else if (user == 4 && computer == 1)
-    {
-        std::cout << "Computer Wins:"
-                  << "😁 : "
-                  << "🦎 VS "
-                  << "🤖 : "
-                  << "✊\n";
-    }
-    else if (user == 4 && computer == 2)
-    {
-        std::cout << "Player Wins:"
-                  << "😁 : "
-                  << "🦎 VS "
-                  << "🤖 : "
-                  << "✋\n";
-    }
-    else if (user == 4 && computer == 3)
-    {
-        std::cout << "Computer Wins:"
-                  << "😁 : "
-                  << "🦎 VS "
-                  << "🤖 : ✌️\n";
-    }
-    else if (user == 4 && computer == 5)
-    {
-        std::cout << "Player Wins:"
-                  << "😁 : "
-                  << "🦎 VS "
-                  << "🤖 : 🖖\n";
-    }
-    else if (user == 5 && computer == 1)
-    {
-        std::cout << "Player Wins:"
-                  << "😁 : "
-                  << "🖖 VS "
-                  << "🤖 : "
-                  << "✊\n";
-    }
-    else if (user == 5 && computer == 2)
-    {
-        std::cout << "Computer Wins:"
-                  << "😁 : "
-                  << "🖖 VS "
-                  << "🤖 : "
-                  << "✋\n";
-    }
-    else if (user == 5 && computer == 3)
-    {
-        std::cout << "Player Wins:"
-                  << "😁 : "
-                  << "🖖 VS "
-                  << "🤖 : ✌️\n";
-    }
-    else if (user == 5 && computer == 4)
-    {
-        std::cout << "Computer Wins:"
-                  << "😁 : "
-                  << "🖖 VS "
-                  << "🤖 : 🦎\n";
-    }
-    else if (user == computer)
-    {
-        std::cout << "Tie\n";
-    }
-    else
-    {
-        std::cout << "Invalid input.\n";
-    }
-
-    return 0;
+    cout << "\nThank you for Playing\n";
 }
